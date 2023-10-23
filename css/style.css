@@ -175,8 +175,9 @@ grid-template-columns: repeat(auto-fit, minmax(260px, auto));
 }
 
 .options_img{
-    width: 100%;
+    width: 50%;
     display: block;
+    margin-left: 200px;
 }
 
 .testimony{
