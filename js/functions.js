@@ -15,8 +15,8 @@ alert("hola bienvenido");
 console.log("hola bienvenido");
 //pantalla
 document.write("HOLA BIENVENIDO")
-document.getElementById("text_ejem").innerHTML="<h1>hola bienvenido</h1>"
-document.getElementById("text_ejem_two").innerText="hola bienvenido"
+document.getElementById("text_one").innerHTML="<h1>hola bienvenido</h1>"
+document.getElementById("text_two").innerText="hola bienvenido"
 //librerias
 var nombre="yohan perez";
 var profecion=" Es estudiante de la ufpso";
@@ -54,7 +54,7 @@ Swal.fire(
    ];
 
 
-// ########## OPERADORES BÃSICOS
+// ########## OPERADORES BASICOS
 // suma +
 var suma = number_one + number_two;
 console.log("Suma = " + suma);
@@ -91,8 +91,8 @@ Swal.fire({
 
 
 //##### operadores logicos y estructuras condicionales (iverse, incremento, etc...)
-var count=0;
-var bool = false ;
+var count;
+var bool =true ;
 var numeric = 5;
 if(!bool && numeric==5){
   console.log(bool);
@@ -102,10 +102,13 @@ else{
 console.log(bool);
 count--;
 }
+// = es para asignar valores
+// == comparar contenido
+// === comparar contenido y tipo de dato
 console.log(count)
 
 
-// or
+// or ||
 
 var age =21;
 if(age==21 || numeric==5){
@@ -138,33 +141,41 @@ do{
 
 //eventos
 function enviar(){
-Document.body.style.backgroundColor = "red"
-Document.body.style.backgroundColor.colot = "afff"}
+  document.body.style.backgroundColor= "red";
+  document.body.style.color = "#fff";
+}
 
-const limpiar =document.getElementById("limpiar");
+const btn_limpiar = document.querySelector("#limpiar");
 
-limpiar.addEventListener("click", () =>{
-  document.body.style.backgroundcolor="#fff";
-  document.body.style.color="#000";
+btn_limpiar.addEventListener("click", () => {
+  document.body.style.backgroundColor = "#fff";
+  document.body.style.color = "#000";
 });
 
 // ejercicio
 
-const form_register= document.getElementById("form_register");
-const nombres = document.getElementById("nombres");
-const apellidos = document.getElementById("apellidos");
-const information= document.getElementById("information");
+const form_register = document.getElementById("form_register");
+const nombres       = document.getElementById("nombres");
+const apellidos     = document.getElementById("apellidos");
+const information   = document.getElementById("information");
 
-form_register.addEventListener("submit",name_event =>{
-  name_event.preventDefault();
-  let info ="";
-  if(nombres.length <= 2 || apellidos.length <3){
-    info += "nombres y apellidos deven ser mayores o iguales a 1"
-    information.style.color="red";
-
-   
-  }
-  else{
-    alert("information")
-  }
-})
+form_register.addEventListener("submit", name_even => {
+    name_even.preventDefault();
+    let info = "";
+    if(nombres.value.length <=2 || apellidos.value.length <3){
+        info += "Nombres Y Apellidos deben ser mayores o igual a 3 carecteres";
+        information.style.color = "red";
+    }
+    else{
+        alert("INFORMACION CORRECTAMENTE");
+    }
+    information.innerText = info;
+});
+function action(){
+    let action = document.getElementById("action");
+    if(action.value.length == 0){
+        action.style.backgroundColor = "red";
+    }else{
+            action.style.backgroundColor = "green";
+        }
+    }

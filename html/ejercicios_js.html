@@ -7,9 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <label for="" id="text_ejem"></label>
-    <label for="" id="text_ejem_two"></label>
+    <label for="" id="text_one"></label>
+    <label for="" id="text_two"></label>
+    <button onclick="enviar()">enviar</button>
     <button id="limpiar">limpiar</button>
+    <input type="text" onblur="action()" id="action" placeholder="eventos aqui">
     <br><br>
     <form autocomplete="off" id="form_register">
         <label for="nombres">nombres</label>
@@ -18,7 +20,7 @@
         <label for="apellidos">apellidos</label>
         <input type="text" name="" size="30" id="apellidos" placeholder="escriba aqui">
         <br>
-        <button type="submit">registrar</button>
+        <button type="submit">registrar</button><br>
         <p id="information"></p>
     </form>
 
